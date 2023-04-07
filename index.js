@@ -4,7 +4,6 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
 const { connectToServer } = require("./utils/dbConnect");
-const eventRoutes = require("./routes/v1/event.route.js");
 const courseRoutes = require("./routes/v1/course.route.js");
 const errorHandler = require("./middleware/errorHandler");
 
@@ -27,7 +26,7 @@ connectToServer((err) => {
 
 //All Routers
 app.use("/api/v1/course", courseRoutes);
-app.use("/api/v1/event", eventRoutes);
+
 
 
 
